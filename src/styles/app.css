@@ -1,0 +1,74 @@
+/* Normalize.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #3a3a3a;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Style Starts Here*/
+body{
+  margin: 5vw;
+}
+
+#nav-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2.5vw;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+@keyframes swoop {
+  from{
+    transform: translateX(-10vw);
+  }
+  40%{
+    transform: translateX(5vw) rotateY(20deg);
+  }
+}
+
+#name{
+  font-weight: bold;
+  font-size: max(4vw,4vh);
+  color:dodgerblue;
+  text-shadow: 4px -3px 2px rgb(48, 184, 252,0.5);
+  animation: 0.8s swoop;
+}
+
+#nav-items{
+  display: flex;
+}
+
+.nav-button{
+  border: 0;
+  background-color: white;
+  padding: 0px 1.5vw;
+  font-size: max(1.5vh,1.5vw);
+}
+
+.nav-button:hover{
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
+}

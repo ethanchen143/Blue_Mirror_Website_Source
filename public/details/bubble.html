@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot or Not: AI Hit Song Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="nav-button" onclick="window.location.href='/'">Back</button>
+    <div class="blog-container">
+        <div class="blog-post">
+            <h1 class="blog-title">Hot or Not: AI Song Prediction</h1>
+            <p class="blog-date">Nov 2024</p>
+            <p class="blog-date">Used: XGBoost, CatBoost, Python, Pandas, Scikit-learn</p>
+            <a class="blog-date" href="https://github.com/ethanchen143/Hot-or-Not.git">Source Code and Data</a>
+            <div class="blog-content">
+                <p><b>Hot or Not</b> is a AI project I developed to explore predictive modeling in the music domain. The goal was to classify songs into "hot" or "not" categories using features like genre, mood, and style, with data from viral music trends on TikTok.</p>
+                
+                <h2>Data and Preprocessing</h2>
+                <p>The dataset consists of detailed metadata and characteristics for about 2500 songs, with a balanced split of viral hits and non-viral tracks. This data includes categories such as genre, style, mood groups, and additional features describing the acoustic properties of the songs. I began by encoding categorical features using one-hot encoding to prepare them for modeling.</p>
+                <p>The preprocessing pipeline included:</p>
+                <ul>
+                    <li>Dropping irrelevant features like song names and unhelpful binary columns.</li>
+                    <li>Splitting the data into training and test sets using an 80/20 split.</li>
+                    <li>Using `pd.get_dummies` to handle categorical variables like genres and styles.</li>
+                </ul>
+
+                <h2>Classification Models</h2>
+                <p>I explored multiple machine learning models, including Random Forest, XGBoost, and CatBoost, to identify the best approach for predicting song virality. Here are the steps I followed:</p>
+                <h3>1. Random Forest Classifier</h3>
+                <p>Starting with a Random Forest model, I optimized parameters such as the number of estimators and tree depth. Despite its simplicity, this model offered competitive accuracy and served as a baseline for comparison.</p>
+                <pre><code>random_forest_model = RandomForestClassifier(
+    n_estimators=100,
+    max_depth=20,
+    random_state=42
+)
+random_forest_model.fit(X_train, y_train)</code></pre>
+                <h3>2. XGBoost Classifier</h3>
+                <p>Next, I implemented XGBoost, a gradient-boosting framework, which performed better on the highly dimensional feature set due to its regularization capabilities. Hyperparameter tuning further improved its performance.</p>
+                <pre><code>xgb_model = xgb.XGBClassifier(
+    n_estimators=200,
+    max_depth=10,
+    learning_rate=0.05,
+    random_state=42
+)
+xgb_model.fit(X_train, y_train)</code></pre>
+                <h3>3. CatBoost Classifier</h3>
+                <p>CatBoost, known for its efficiency with categorical features, showed promising results without requiring extensive preprocessing. Its out-of-the-box performance made it an appealing choice for this project.</p>
+                <pre><code>cat_model = CatBoostClassifier(
+    iterations=500,
+    depth=10,
+    learning_rate=0.05,
+    random_state=42
+)
+cat_model.fit(X_train, y_train, verbose=100)</code></pre>
+
+                <h2>Evaluation and Results</h2>
+                <p>The models were evaluated using metrics such as accuracy, F1-score, and precision/recall. Below are the results:</p>
+                <ul>
+                    <li>Random Forest: 78% accuracy</li>
+                    <li>XGBoost: 83% accuracy</li>
+                    <li>CatBoost: 85% accuracy</li>
+                </ul>
+                <p>Among these, CatBoost emerged as the best performer due to its robust handling of categorical features and superior predictive power.</p>
+                
+                <h2>Challenges</h2>
+                <ul>
+                    <li>Overfitting during model training, mitigated by hyperparameter tuning and cross-validation.</li>
+                    <li>Handling the imbalance between feature complexity and model interpretability.</li>
+                </ul>
+                <p>This project highlighted the importance of feature engineering and model selection in building reliable predictive systems.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

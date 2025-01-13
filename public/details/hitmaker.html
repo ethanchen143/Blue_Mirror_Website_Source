@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitmaker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="nav-button" onclick="window.location.href='/'">Back</button>
+    <div class="blog-container">
+        <div class="blog-post">
+            <h1 class="blog-title">Hitmaker: Chord Progression Generator</h1>
+            <p class="blog-date">Released June 2023</p>
+            <p class="blog-date">Used: Python, Spotify API, Music21, wx</p>
+            <a class="blog-date" href="https://drive.google.com/drive/folders/1dP1nohCl_1nkVqJDKzA7bO_SOlpLlgMr?usp=drive_link">Download for Mac</a>
+            <p></p>
+            <a class="blog-date" href="https://github.com/ethanchen143/HitMaker.git">Source Code</a>
+            <div class="blog-content">
+                <p><b>Hitmaker</b> is a chord generator that allows songwriters to get harmonic inspiration when they start writing a song. By analyzing the mood and energy parameter inputs it's given, Hitmaker can generate MIDI files of chord progressions accordingly, from its dataset of over 1000 chord progressions from songs with proven commercial success!</p>
+                <p>Harmony is the cornerstone of a song's emotional aspect and it can be complex and highly subjective. To quantify it, I used valence and energy index from Spotify API's track data. Valence measures a song's sentiment, with a high valence indicating happy, joyful, and a low valence indicating sad and depressed. Energy informs the activity and intensity of the song. My idea is to associate each BillBoard hits with their mood and energy values, and send their chord progressions if the values falls within range of user's input.</p>
+                <img src="./media/chord-circle.png" alt="Circle">
+                <h2>Demo</h2>
+                <p>Experience Hitmaker in action with its simple, intuitive user interface. As shown in the video, generated MIDI files can be effortlessly imported into DAWs, enhancing creative workflow.</p>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/SJpA0bz5K6M?si=MW0gRZO4AwudEcan" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p>A significant challenge I faced was converting chord progressions from string format into MIDI files. While the Music 21 library offers Pitch and Interval classes that can directly convert to MIDI, it does not support chord name conversion. So, I developed a parser that decomposes any chord (e.g., Amin9) into its root (A) and other notes represented as intervals (m3, P5, m7, M9 in this case).</p>
+                <p>I also gained some experience in developing UI and building MacOS Apps. To improve user experience, I added a play preview feature. I used PyGame's sound engine and implemented threading so that the preview can be interupted and retriggered normally.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

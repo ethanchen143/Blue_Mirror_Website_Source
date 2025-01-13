@@ -1,0 +1,269 @@
+.profile{
+    display: flex;
+    padding: 2.5vw;
+    gap: 2.5vw;
+    font-size: max(1.6vw,1.6vh);
+    line-height: 4vh;
+}
+
+.profile img{
+    max-width: 25vw;
+    box-shadow: 5px 5px 10px yellow;
+}
+
+.profile-links{
+    margin: 3vh 0;
+    display: flex;
+    gap: 0.5vw;
+    font-size: 3vh;
+}
+
+.social-button:hover{
+    transform: scale(1.2);
+    transition: transform 0.1s;
+}
+
+.filter-button {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid gray;
+    background-color: white;
+    cursor: pointer;
+    font-size: max(1.4vh,1.4vw);
+    border-radius: 1.4vw;
+  }
+  
+.filter-button.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.filter-button:hover{
+    transform: scale(1.1);
+    transition: transform 0.1s;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(max(2), minmax(min(70vw,400px),1fr));
+    gap: 30px;
+    padding: 30px;
+    font-size: max(1.4vw,1.4vh);
+}
+
+.project-card {
+    border: 1px solid #ccc;
+    padding: min(5vw,5vh);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    line-height: min(3.5vw,3.5vh);
+}
+
+.project-card img {
+    width: 100%;
+    height: 65%;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover{
+    transform: scale(1.05);
+    transition: transform 0.2s;
+}
+
+.project-card a{
+    text-decoration:underline;
+}
+
+.about-contain{
+    display: flex;
+}
+
+.about{
+    display: flex;
+    padding: 2.5vw;
+    font-size: max(1.4vw,1.4vh);
+    line-height: max(2.5vh,2.5vw);
+}
+
+.about-link{
+    display: flex;
+    flex-direction: column;
+    margin: 3vh 0;
+    gap: 0.5vw;
+    font-size: 3vh;
+}
+
+.about-lists{
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-text{
+    display: flex;
+    flex-direction: column;
+    gap:max(3vh,3vw);
+}
+
+.carousel-container {
+    height: 40vh;
+    width: 70vw;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: flex; /* Change to block for absolute positioning */
+    position: relative; /* Needed for absolute positioning of child elements */
+    width: 400%;
+    height: 100%;
+}
+
+.carousel-slide img {
+    transform: translateX(22vw);
+    width: 10%;
+    object-fit:contain;
+}
+
+.carousel-navigation button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+#prevBtn {
+    left: 15vw;
+}
+
+#nextBtn {
+    right: 15vw;
+}
+
+.carousel-indicators {
+    text-align: center;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.playlist {
+    width: 40vw;
+    height: 45vh;
+}
+
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items for a better mobile view */
+        padding: 10px; /* Adjust padding for smaller screens */
+        font-size: 4vw; /* Increase font size for better readability */
+    }
+    .profile img {
+        max-width: 60vw; /* Increase image width on smaller screens */
+    }
+    .project-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Use a single column */
+        gap: 30px;
+        padding: 30px;
+        font-size: 1.5vh;
+        line-height: 3vh;
+    }
+
+    .playlist{
+        width: 100%;
+    }
+}
+
+.resume-link {
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.resume-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.resume-button:hover {
+  background-color: #e0e0e0;
+}
+
+.intro-text {
+  font-size: 1.5rem;  /* Makes text 25% larger than base font size */
+  line-height: 1.5;    /* Adds comfortable spacing between lines */
+  margin: 0.75rem 0;   /* Adds vertical spacing between paragraphs */
+  font-weight: 500;    /* Makes text slightly bolder, optional */
+}
+
+.sound-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.music-item {
+  text-align: center;
+}
+
+.music-text {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.artist-link {
+  color: #1DB954;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.artist-link:hover {
+  color: #1ed760;
+}
+
+.spotify-embed {
+  width: 100%;
+  height: 352px;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .sound-container {
+    padding: 1rem;
+  }
+  
+  .spotify-embed {
+    height: 300px;
+  }
+  
+  .music-text {
+    font-size: 1.2rem;
+  }
+}
