@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Synth: Chance Composition</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="nav-button" onclick="window.location.href='/'">Back</button>
+    <div class="blog-container">
+        <div class="blog-post">
+            <h1 class="blog-title">Bubble Synth: Chance Composition</h1>
+            <p class="blog-date">Jul 2024</p>
+            <p class="blog-date">Used: Tone.js, React, Javascript</p>
+            <p></p>
+            <a class="blog-date" href="https://github.com/ethanchen143/Bubble-Synth.git">Source Code</a>
+            <a class=""></a>
+            <div class="blog-content">
+                <p><b>Bubbel Synth</b> is a interactive music generator built with Javascript and Tone.js. It features a unique graphical interface with bubbles bouncing around to control and modulate the sound. The "physical" location of bubbles, at the time of sampling, determines how synth engine is triggered. This project is inspired by Brian Eno, chance composition, and experimental music.</p>                
+                <h3>The Demo</h3>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/UA4tRznqYdo?si=zuudyAXs7aBaPcpD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <h3>Key Features</h3>
+                <p><b>Interactive Control</b>: Select low/mid/high notes and instrument, drop the bubble anywhere on the canvas. The bubble will get a random acceleration and exchange velocity upon contact with the border or another bubble.</p>
+                <p><b>Customize Tonality</b>: Select the root key and scale/chord type, the canvas will be divided to map bubble position to each note in that scale/chord, from left to right.</p>
+                <p><b>Effects</b>: Select a effect bubble and drop it on canvas to modulate all sound. The parameters of the effect (e.g. cutoff of the filter, feedback of the delay) will modulate based on its position similar to note bubbles.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
